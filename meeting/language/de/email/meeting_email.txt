@@ -1,0 +1,22 @@
+Subject: {MEETING_MAIL_SUBJECT}
+
+Hallo {USERNAME},
+
+die folgende E-Mail erhältst du über das Meeting {MEETING_SUBJECT}
+von {FROM_USER} von {SITENAME}.
+
+Wenn diese E-Mail unerwünschten Inhalt (Spam) enthält, dann kontaktiere bitte den Webmaster unter:
+
+{BOARD_EMAIL}
+
+
+Diese Nachricht wurde Dir gesendet:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+{MEETING_MAIL_TEXT}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Wenn du das Meeting anschauen möchtest, dann verwende bitte diesen Link:
+
+{U_MEETING_MAIL_LINK}

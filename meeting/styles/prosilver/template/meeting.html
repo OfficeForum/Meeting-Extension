@@ -1,0 +1,38 @@
+<!-- INCLUDE overall_header.html -->
+
+<h2>{L_PAGE_TITLE}</h2>
+
+<!-- IF U_MEETING_VIEW -->
+<div style="float: right;" class="nav">[ <a href="{U_MEETING_VIEW}">{MEETING_VIEW}</a> ]</div>
+<!-- ENDIF -->
+<!-- IF S_M_CAN_ADD and U_MEETING_VIEW-->
+<div style="float: right;">&nbsp;&bull;&nbsp;</div>
+<!-- ENDIF -->
+<!-- IF S_M_CAN_ADD -->
+<div style="float: right;" class="nav">[ <a href="{U_MEETING_ADD}">{L_MEETING_ADD}</a> ]</div>
+<!-- ENDIF -->
+
+<br style="clear: both;" /><br />
+
+<!-- IF S_MEETING_EDIT --><!-- INCLUDE meeting_edit.html --><!-- ENDIF -->
+<!-- IF S_MEETING_DETAIL --><!-- INCLUDE meeting_detail.html --><!-- ENDIF -->
+<!-- IF S_MEETING_MANAGE --><!-- INCLUDE meeting_manage.html --><!-- ENDIF -->
+<!-- IF S_MEETING_CAL --><!-- INCLUDE meeting_cal.html --><!-- ENDIF -->
+
+<br />
+
+<!-- IF U_MEETING_VIEW -->
+<div style="float: right;" class="nav">[ <a href="{U_MEETING_VIEW}">{MEETING_VIEW}</a> ]</div>
+<!-- ENDIF -->
+<!-- IF S_M_CAN_ADD and U_MEETING_VIEW-->
+<div style="float: right;">&nbsp;&bull;&nbsp;</div>
+<!-- ENDIF -->
+<!-- IF S_M_CAN_ADD -->
+<div style="float: right;" class="nav">[ <a href="{U_MEETING_ADD}">{L_MEETING_ADD}</a> ]</div>
+<!-- ENDIF -->
+
+<br style="clear: both;" /><br />
+
+<div class="panel"><div class="inner"><div class="copyright">{MEETING_VERSION}<br />{L_MEETING_TIMEZONE_HINT}</div></div>
+
+<!-- INCLUDE overall_footer.html -->

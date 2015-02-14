@@ -1,0 +1,6 @@
+meeting_controller:
+    path: /meeting/
+    defaults: { _controller: oxpus.meeting.controller:handle }
+meeting_page_controller:
+    path: /meeting/
+    defaults: { _controller: oxpus.meeting.controller:handle }
