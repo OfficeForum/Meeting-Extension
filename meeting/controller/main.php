@@ -528,7 +528,7 @@ class main
 						if (!class_exists('messenger'))
 						{
 							include_once($this->root_path . 'includes/functions_messenger.' . $this->php_ext);
-							$messenger = new messenger();
+							$messenger = new \messenger();
 						}
 		
 						$sql = 'SELECT u.username, u.user_email, u.user_lang FROM ' . MEETING_USER_TABLE . ' m, ' . USERS_TABLE . ' u
@@ -1387,7 +1387,7 @@ class main
 						if (!class_exists('messenger'))
 						{
 							include_once($this->root_path . 'includes/functions_messenger.' . $this->php_ext);
-							$messenger = new messenger();
+							$messenger = new \messenger();
 						}
 						
 						$messenger->template('admin_send_email', $user_lang);
@@ -1496,7 +1496,7 @@ class main
 						if (!class_exists('messenger'))
 						{
 							include_once($this->root_path . 'includes/functions_messenger.' . $this->php_ext);
-							$messenger = new messenger();
+							$messenger = new \messenger();
 						}
 						
 						$messenger->template('admin_send_email', $user_lang);

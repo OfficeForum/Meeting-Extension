@@ -296,11 +296,13 @@ class main_listener implements EventSubscriberInterface
 	public function add_permission_cat($event)
 	{
 		$perm_cat = $event['categories'];
-		$perm_cat['meeting'] = 'ACP_MEETING';
+		$perm_cat['meetings'] = 'ACP_MEETING';
 		$event['categories'] = $perm_cat;
 
 		$permission = $event['permissions'];
-		$permission['a_meeting_main']		= array('lang' => 'ACP_MEETING',		'cat' => 'meeting');
+		$permission['a_meeting_config']	= array('lang' => 'ACL_A_MEETING_CONFIG',	'cat' => 'meetings');
+		$permission['a_meeting_add']	= array('lang' => 'ACL_A_MEETING_ADD',		'cat' => 'meetings');
+		$permission['a_meeting_manage']	= array('lang' => 'ACL_A_MEETING_MANAGE',	'cat' => 'meetings');
 		$event['permissions'] = $permission;
 	}
 }

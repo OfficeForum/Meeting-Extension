@@ -27,11 +27,11 @@ if (empty($lang) || !is_array($lang))
 
 // Permissions
 $lang = array_merge($lang, array(
-	'ACP_MEETING'			=> 'Meetings',
+	'ACP_MEETING'			=> 'Treffen',
 
-	'ACL_A_MEETING_CONFIG'	=> array('lang' => 'Kann die Meetings Einstellungen ändern',	'cat' => 'meeting'),
-	'ACL_A_MEETING_ADD'		=> array('lang' => 'Kann neue Meetings erfasssen',				'cat' => 'meeting'),
-	'ACL_A_MEETING_MANAGE'	=> array('lang' => 'Kann bestehende Meetings bearbeiten',		'cat' => 'meeting'),
+	'ACL_A_MEETING_CONFIG'	=> 'Kann die Einstellungen für Treffen ändern',
+	'ACL_A_MEETING_ADD'		=> 'Kann neue Treffen erfassen',
+	'ACL_A_MEETING_MANAGE'	=> 'Kann bestehende Treffen bearbeiten',
 
-	'ACL_U_MEETING'			=> array('lang' => 'Kann Meetings bearbeiten',					'cat' => 'meeting'),
+	'ACL_U_MEETING'			=> 'Kann Treffen bearbeiten',
 ));

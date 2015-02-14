@@ -21,9 +21,9 @@ class main_info
 			'title'		=> 'ACP_MEETING',
 			'version'	=> $config['meeting_version'],
 			'modes'		=> array(
-				'config'	=> array('title' => 'MEETING_CONFIG',	'auth' => 'acl_a_meeting_config',	'cat' => array('MEETING')),
-				'add'		=> array('title' => 'MEETING_ADD',		'auth' => 'acl_a_meeting_add',		'cat' => array('MEETING')),
-				'manage'	=> array('title' => 'MEETING_MANAGE',	'auth' => 'acl_a_meeting_manage',	'cat' => array('MEETING')),
+				'config'	=> array('title' => 'MEETING_CONFIG',	'auth' => 'ext_oxpus/meeting && acl_a_meeting_config',	'cat' => array('ACP_MEETING')),
+				'add'		=> array('title' => 'MEETING_ADD',		'auth' => 'ext_oxpus/meeting && acl_a_meeting_add',		'cat' => array('ACP_MEETING')),
+				'manage'	=> array('title' => 'MEETING_MANAGE',	'auth' => 'ext_oxpus/meeting && acl_a_meeting_manage',	'cat' => array('ACP_MEETING')),
 			),
 		);
 	}

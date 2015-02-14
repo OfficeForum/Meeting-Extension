@@ -29,9 +29,9 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'ACP_MEETING'			=> 'Meetings',
 
-	'ACL_A_MEETING_CONFIG'	=> array('lang' => 'Can edit the meeting configuration',	'cat' => 'meeting'),
-	'ACL_A_MEETING_ADD'		=> array('lang' => 'Can add new meetings',					'cat' => 'meeting'),
-	'ACL_A_MEETING_MANAGE'	=> array('lang' => 'Can manage existing meetings',			'cat' => 'meeting'),
+	'ACL_A_MEETING_CONFIG'	=> 'Can edit the meeting configuration',
+	'ACL_A_MEETING_ADD'		=> 'Can add new meetings',
+	'ACL_A_MEETING_MANAGE'	=> 'Can manage existing meetings',
 
-	'ACL_U_MEETING'			=> array('lang' => 'Can edit meetings',						'cat' => 'meeting'),
+	'ACL_U_MEETING'			=> 'Can edit meetings',
 ));
