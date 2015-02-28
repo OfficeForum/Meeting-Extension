@@ -396,7 +396,7 @@ class main
 		$basic_link_start	= $this->helper->route('meeting_controller', array_merge($basic_values_start, array('mode' => 'manage', 'start' => $start)));
 		
 		// Prepare filter settings
-		$sql_filter = ( $filter_by == 'none' ) ? '' : (($filter) ? " WHERE $filter_by LIKE ('%$filter%')" : '' );
+		$sql_filter = ( $filter_by == 'none' ) ? '' : (($filter) ? " AND lower($filter_by) LIKE ('%" . $this->db->sql_escape(strtolower($filter)) . "%')" : '' );
 		
 		// Generate page title and set template
 		switch ($mode)
@@ -2183,7 +2183,7 @@ class main
 					$sql = 'SELECT m.* FROM ' . MEETING_USER_TABLE . ' u, ' . MEETING_DATA_TABLE . ' m
 						WHERE u.user_id = ' . (int) $this->user->data['user_id'] . '
 							AND u.meeting_id = m.meeting_id
-							' . $this->db->sql_escape($sql_filter) . ' 
+							' . $sql_filter . ' 
 							' . $this->db->sql_escape($sql_closed) . ' 
 							' . $this->db->sql_escape($sql_where_2) . ' 
 						ORDER BY ' . $this->db->sql_escape($sort_field) . ' ' . $this->db->sql_escape($sort_order);
@@ -2193,12 +2193,12 @@ class main
 					// Read all meeting data based on the filter
 					$sql = "SELECT * FROM " . MEETING_DATA_TABLE . '
 						WHERE meeting_id <> 0
-							' . $this->db->sql_escape($sql_filter) . ' 
+							' . $sql_filter . ' 
 							' . $this->db->sql_escape($sql_closed) . ' 
 							' . $this->db->sql_escape($sql_where_2) . ' 
 						ORDER BY ' . $this->db->sql_escape($sort_field) . ' ' . $this->db->sql_escape($sort_order);
 				}
-		
+
 				$result = $this->db->sql_query($sql);
 				$total_meetings = $this->db->sql_affectedrows($result);
 		
