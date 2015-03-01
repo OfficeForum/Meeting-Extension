@@ -2170,10 +2170,10 @@ class main
 					// Get the meetings for the current shown month
 					$sql = 'SELECT * FROM ' . MEETING_DATA_TABLE . "
 						WHERE meeting_id <> 0 
-							AND (FROM_UNIXTIME(meeting_time, '%Y-%m') <= '" . $this->db->sql_escape($m_cal_period) . "' 
-							OR FROM_UNIXTIME(meeting_end, '%Y-%m') >= '" . $this->db->sql_escape($m_cal_period) . "'
-							OR FROM_UNIXTIME(meeting_until, '%Y-%m') = '" . $this->db->sql_escape($m_cal_period) . "') 
-							" . $this->db->sql_escape($sql_where_2) . ' 
+							AND (FROM_UNIXTIME(meeting_time, '%Y-%m') <= '" . $m_cal_period . "' 
+							OR FROM_UNIXTIME(meeting_end, '%Y-%m') >= '" . $m_cal_period . "'
+							OR FROM_UNIXTIME(meeting_until, '%Y-%m') = '" . $m_cal_period . "') 
+							" . $sql_where_2 . ' 
 						ORDER BY meeting_until, meeting_time, meeting_id';
 		
 				}
@@ -2184,8 +2184,8 @@ class main
 						WHERE u.user_id = ' . (int) $this->user->data['user_id'] . '
 							AND u.meeting_id = m.meeting_id
 							' . $sql_filter . ' 
-							' . $this->db->sql_escape($sql_closed) . ' 
-							' . $this->db->sql_escape($sql_where_2) . ' 
+							' . $sql_closed . ' 
+							' . $sql_where_2 . ' 
 						ORDER BY ' . $this->db->sql_escape($sort_field) . ' ' . $this->db->sql_escape($sort_order);
 				}
 				else
@@ -2194,8 +2194,8 @@ class main
 					$sql = "SELECT * FROM " . MEETING_DATA_TABLE . '
 						WHERE meeting_id <> 0
 							' . $sql_filter . ' 
-							' . $this->db->sql_escape($sql_closed) . ' 
-							' . $this->db->sql_escape($sql_where_2) . ' 
+							' . $sql_closed . ' 
+							' . $sql_where_2 . ' 
 						ORDER BY ' . $this->db->sql_escape($sort_field) . ' ' . $this->db->sql_escape($sort_order);
 				}
 
