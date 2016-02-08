@@ -2,15 +2,15 @@
 	"name": "oxpus/meeting",
 	"type": "phpbb-extension",
 	"description": "Meeting Extension",
-	"homepage": "http://phpbb3.oxpus.net",
-	"version": "3.0.1",
+	"homepage": "https://phpbb3.oxpus.net",
+	"version": "3.0.2",
 	"time": "2015-02-28",
 	"license": "GPL-2.0",
 	"authors": [{
 			"name": "Karsten Ude",
 			"username": "oxpus",
 			"email": "karsten.ude@oxpus.net",
-			"homepage": "http://www.oxpus.net",
+			"homepage": "https://www.oxpus.net",
 			"role": "Lead Developer"
 		}],
 	"require": {

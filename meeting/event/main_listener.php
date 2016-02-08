@@ -136,10 +136,6 @@ class main_listener implements EventSubscriberInterface
 		));
 
 		$ext_main_link = $this->helper->route('meeting_controller');
-		if (strpos($ext_main_link, 'app.' . $this->php_ext . '/meeting') === false)
-		{
-			$ext_main_link = str_replace('/meeting', '/app.' . $this->php_ext . '/meeting', $ext_main_link);
-		}
 
 		if (!defined('IN_MEETING') && $this->auth->acl_get('u_meeting') && !defined('ADMIN_START'))
 		{
@@ -249,10 +245,6 @@ class main_listener implements EventSubscriberInterface
 		if ($event['row']['session_page'] === 'app.php/meeting' || $event['row']['session_page'] === 'app.' . $this->php_ext . '/meeting.php')
 		{
 			$ext_link = $this->helper->route('meeting_controller');
-			if (strpos($ext_link, 'app.' . $this->php_ext . '/meeting') === false)
-			{
-				$ext_link = str_replace('/meeting', '/app.' . $this->php_ext . '/meeting', $ext_link);
-			}
 
 			$event['location'] = $this->user->lang('MEETING');
 			$event['location_url'] = $ext_link;
