@@ -27,7 +27,6 @@ class main_listener implements EventSubscriberInterface
 			'core.user_setup'						=> 'load_language_on_setup',
 			'core.page_header'						=> 'add_page_header_links',
 			'core.viewonline_overwrite_location'	=> 'add_viewonline',
-			'core.update_username'					=> 'change_username',
 			'core.delete_user_after'				=> 'delete_user',
 			'core.permissions'						=> 'add_permission_cat',
 		);
@@ -249,23 +248,6 @@ class main_listener implements EventSubscriberInterface
 			$event['location'] = $this->user->lang('MEETING');
 			$event['location_url'] = $ext_link;
 		}
-	}
-
-	public function change_username($event)
-	{
-		$ext_path = $this->phpbb_extension_manager->get_extension_path('oxpus/meeting', true);
-		$table_prefix = $this->table_prefix;
-		include_once($ext_path . '/includes/helpers/constants.' . $this->php_ext);
-
-		$update_ary = array(MEETING_COMMENT_TABLE, MEETING_GUESTNAMES_TABLE, MEETING_USER_TABLE);
-
-		foreach ($update_ary as $table)
-		{
-			$sql = "UPDATE $table
-				SET username = '" . $this->db->sql_escape($event['new_name']) . "'
-				WHERE username = '" . $this->db->sql_escape($event['old_name']) . "'";
-			$this->db->sql_query($sql);
-		}	
 	}
 
 	public function delete_user($event)

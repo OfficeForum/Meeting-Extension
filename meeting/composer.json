@@ -3,7 +3,7 @@
 	"type": "phpbb-extension",
 	"description": "Meeting Extension",
 	"homepage": "https://phpbb3.oxpus.net",
-	"version": "3.0.2",
+	"version": "3.0.3",
 	"time": "2015-02-28",
 	"license": "GPL-2.0",
 	"authors": [{
